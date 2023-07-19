@@ -221,6 +221,27 @@ body, h1, h2, h3, h4, p, img, a, input, button {
   .hero-content img{
     width: 70%;
   }
+  #display-name{
+    height: 31px;
+    display: flex;
+    align-items: center;
+
+  }
+  #display-name>h5{
+    color: white;
+
+  }
+  #display-name>img{
+    /* width: 20%;
+    height: 50px; */
+    width: 9vh;
+    border-radius: 50px;
+    margin-left: 10px;
+    height: 3vw;
+  }
+  #logout{
+    color: white;
+  }
 
   /* Small devices (mobile phones) */
 @media (max-width: 576px) {

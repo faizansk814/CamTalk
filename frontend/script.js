@@ -1,15 +1,19 @@
-let videoelement=document.getElementById("videoappend");
+let videoelement=document.getElementById("videoDiv");
 
 
-let socket=io("http://localhost:4031");
+let socket=io("https://video-application.onrender.com");
+const hideaudio=document.getElementById("hide-audio")
+const hidevideo=document.getElementById("hide-video")
 const video = document.createElement('video');
 video.muted = true;
 const myPeer = new Peer();
 let userConnected={}
-
+let userStream;
+const urlParams = new URLSearchParams(window.location.search);
+const roomID = urlParams.get('roomID');
 navigator.mediaDevices.getUserMedia({
     video: true,
-    audio: true,
+    audio: false,
 
 }).then(stream => {
 
@@ -36,10 +40,16 @@ navigator.mediaDevices.getUserMedia({
 }).catch(err => {
     console.log(err);
 })
-const roomid=123
+
+socket.on('user-disconnected', (userID) => {
+    if (userConnected[userID]) {
+        userConnected[userID].close()
+    }
+})
+
 myPeer.on('open',(id)=>{
     console.log("emited")
-    socket.emit('join-room',roomid,id)
+    socket.emit('join-room',roomID,id)
 })
 
 const connectedNewUser=(userID,stream)=>{
@@ -67,3 +77,22 @@ const addStream = (video,stream) => {
     console.log("video appended")
 
 }
+
+
+hidevideo.addEventListener('click',()=>{
+    const videotrack=userStream.getTracks().find(track => track.kind === 'video')
+    if(videotrack.enabled){
+        videotrack.enabled=false
+    }else{
+        videotrack.enabled=true
+    }
+})
+
+hideaudio.addEventListener('click',()=>{
+    const audiotrack=userStream.getTracks().find(track => track.kind === 'audio')
+    if(audiotrack.enabled){
+        audiotrack.enabled=false
+    }else{
+        audiotrack.enabled=true
+    }
+})
