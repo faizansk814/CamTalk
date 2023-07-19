@@ -1,7 +1,6 @@
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
-
 signUpButton.addEventListener('click', () => {
     container.classList.add("right-panel-active");
 });
@@ -14,7 +13,6 @@ const nameinp = document.getElementById("name")
 const emailinp = document.getElementById("email")
 const passwordinp = document.getElementById("password")
 const signupbutton = document.getElementById("signupbtn")
-
 function Signup() {
     let obj = {
         name: nameinp.value,
@@ -28,7 +26,7 @@ function Signup() {
         },
         body: JSON.stringify(obj)
     }
-    fetch("http://localhost:8080/user/register", option)
+    fetch("https://video-application-main-serverrrr.onrender.com/user/register", option)
         .then((res) => {
             return res.json()
         })
@@ -71,7 +69,7 @@ function Login() {
         },
         body: JSON.stringify(obj)
     }
-    fetch("http://localhost:8080/user/login", option)
+    fetch("https://video-application-main-serverrrr.onrender.com/user/login", option)
         .then((res) => {
             return res.json()
         })
