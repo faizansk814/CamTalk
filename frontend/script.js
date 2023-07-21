@@ -13,7 +13,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const roomID = urlParams.get('roomID');
 navigator.mediaDevices.getUserMedia({
     video: true,
-    audio: false,
+    audio: true,
 
 }).then(stream => {
 
