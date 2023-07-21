@@ -57,7 +57,8 @@ const loginemailinp = document.getElementById("loginemail")
 const loginpasswordinp = document.getElementById("loginpass")
 const signinbutton = document.getElementById("siginbtn")
 
-function Login() {
+function Login(e) {
+    e.preventDefault()
     let obj = {
         email: loginemailinp.value,
         password: loginpasswordinp.value
