@@ -3,8 +3,8 @@ let tokenurl = urlParams.get('token');
 let username = urlParams.get("name")
 let image = urlParams.get("image")
 console.log(username)
-VideoServerStart()
 MainServerStart()
+VideoServerStart()
 function MainServerStart(){
     fetch("https://video-application-main-serverrrr.onrender.com/start")
     .then((res)=>{
@@ -31,6 +31,7 @@ function VideoServerStart(){
         console.log(err)
     })
 }
+
 if (tokenurl) {
 
     localStorage.setItem("token", tokenurl)

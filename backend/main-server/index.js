@@ -8,6 +8,10 @@ app.use(express.json())
 app.use(cors())
 app.use("/user",userRouter)
 app.use("/auth",authrouter)
+
+app.get("/start",(req,res)=>{
+    return res.status(200).send({msg:"Start the server"})
+})
 app.listen(8080,async ()=>{
     try {
         await connection
