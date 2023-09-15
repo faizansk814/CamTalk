@@ -12,7 +12,7 @@
 RealTalk is a type of application that enables users to share their computer screens with others in real-time over the internet. 
 It includes features that allows user to chat and video call with each other.**
 
-## Deployment Link -https://realtalk-online-videochat.netlify.app/
+## Deployment Link -[https://realtalk-online-videochat.netlify.app/](https://videochatglance.netlify.app)
 
 ## Tech Stack
 
