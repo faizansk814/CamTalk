@@ -1,19 +1,13 @@
-# Real Talk Online Chat Platform
+# CamTalk Online Chat Platform
+# CamTalk - Real Time Video Chat Application
 
-
-
-
-
-# RealTalk - Real Time Video Chat Application
-
-**RealTalk is a communications platform that allows users to connect with video, audio and chat.**
+**CamTalk is a communications platform that allows users to connect with video, audio and chat.**
 
 **The power of collaboration is that it can turn a group of individuals into a team empowered to achieve great things
-RealTalk is a type of application that enables users to share their computer screens with others in real-time over the internet. 
+CamTalk is a type of application that enables users to share their computer screens with others in real-time over the internet. 
 It includes features that allows user to chat and video call with each other.**
 
-## Deployment Link -[https://realtalk-online-videochat.netlify.app/](https://videochatglance.netlify.app)
-
+## Deployment Link -([https://videochatglance.netlify.app/])
 ## Tech Stack
 
 **Client:** HTML | CSS | Javascript | Bootsrap | External CSS library
